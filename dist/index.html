@@ -8,42 +8,44 @@
 </head>
 <body>
     <div id="outermost">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">   
-                  <strong>WEATHER NOW</strong>
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active bg-primary text-light" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
-            </div>
-          </nav>
-        
-        <div id="main-wrapper" class="container-fluid">
-            <div class="row">
-                <div id="main" class="col-md-7  g-0">MAIN</div>
-                <div id="aside"  class="col-md-5  g-0">
-                    <div id="one">gfgffgf</div>
-                    <div id="two">fgfdg</div>
-                    <div id="three">fdggfd</div>
-                </div>
-            </div>
-        </div>
+         <div id="centered">
+           <input id="city" name="city" type="text" placeholder="Enter city">
+           <select id="temp-unit" name="temp-unit">
+             <option value="Celcius">Celcius</option>
+             <option value="Fabrenheit">Fabrenheit</option>
+           </select>
+           <button id="submit-city" class="btn btn-primary">Search </button> 
+         </div>
     </div>
-    <script src="main.js"></script>
+
+<!-- Modal -->
+
+<button  id="staticBackdropbutton" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="modal-body" class="modal-body">
+        <div id="country">country</div>
+        <div id="iconDiv">icon</div>
+        <div id="weatherDiv">weather</div>
+        <div id="temp">temperature</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="myModal"></div>
+<script src="bootstrap.bundle.js"></script>
+<script src="index.bundle.js"></script>
 </body>
 </html>
