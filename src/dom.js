@@ -85,7 +85,7 @@ const Dom = (() => {
       countryDiv.innerHTML = `<span class="weather_info"> ${response.name}, ${response.sys.country}</span>`;
       weatherDiv.innerHTML = `<span class="weather_info">Weather: ${response.weather[0].main}, ${response.weather[0].description}</span>`;
       humidityDiv.innerHTML = `<span class="weather_info">Humidity: ${response.main.humidity}</span>`;
-      tempDiv.textContent = `${response.main.temp}`;
+      tempDiv.textContent = `${Number(response.main.temp).toFixed(0)}`;
       tempDiv.setAttribute('data-celcius', response.celcius);
       tempDiv.setAttribute('data-fahrenheit', response.fahrenheit);
       iconDiv.innerHTML = `<img src='http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png'>`;
