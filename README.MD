@@ -22,7 +22,7 @@ $ cd <directory>
 $ git clone https://github.com/gabrie-lhilarion/JS-Weather-App.git 
 ```
 ### Live Demo
-![screenshot](https://rawcdn.githack.com/gabrie-lhilarion/JS-Weather-App/61eee0d1528e504e07730e8da73c27761ebeeaed/dist/index.html)
+![screenshot](https://rawcdn.githack.com/gabrie-lhilarion/JS-Weather-App/26194dc1be5a8cb8515bcefb4b87401a06836ff4/dist/index.html)
 
 ### Usage
 - In any Brownser open index.html
