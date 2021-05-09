@@ -2,7 +2,7 @@
 
 > This project is a simple Javascript website in which a user is able to search and retrieve weather information.
 
-![screenshot](./weather-app.png) 
+![screenshot](./src/weather-app.png) 
 ## Built With
 
 - HTML
@@ -22,7 +22,7 @@ $ cd <directory>
 $ git clone https://github.com/gabrie-lhilarion/JS-Weather-App.git 
 ```
 ### Live Demo
-![screenshot](https://rawcdn.githack.com/gabrie-lhilarion/JS-Weather-App/26194dc1be5a8cb8515bcefb4b87401a06836ff4/dist/index.html)
+[Weather App](https://rawcdn.githack.com/gabrie-lhilarion/JS-Weather-App/26194dc1be5a8cb8515bcefb4b87401a06836ff4/dist/index.html)
 
 ### Usage
 - In any Brownser open index.html
