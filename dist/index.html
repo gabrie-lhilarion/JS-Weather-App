@@ -9,10 +9,11 @@
 <body>
     <div id="outermost">
          <div id="centered">
+           <h3>Enter a city to search</h3>
            <input id="city" name="city" type="text" placeholder="Enter city">
            <select id="temp-unit" name="temp-unit">
-             <option value="Celcius">Celcius</option>
-             <option value="Fabrenheit">Fabrenheit</option>
+             <option value="metric">Celcius</option>
+             <option value="imperial">Fabrenheit</option>
            </select>
            <button id="submit-city" class="btn btn-primary">Search </button> 
          </div>
@@ -25,7 +26,7 @@
 </button>
 
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
@@ -35,11 +36,17 @@
         <div id="country">country</div>
         <div id="iconDiv">icon</div>
         <div id="weatherDiv">weather</div>
-        <div id="temp">temperature</div>
+        <div id="humidityDiv">weather</div>
+        <div> <strong>Temperature: <span id="temp"></span>&#730; <em class="temp-symbol"> </em> </strong> </div>
+        <div  id="temp-units" class="temp-units"> 
+          <span>
+            <button id="imperial" class="btn btn-primary">Fabrenheit</button>
+            <button id="metric" class="btn">Celcius</button>
+          </span>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
       </div>
     </div>
   </div>
