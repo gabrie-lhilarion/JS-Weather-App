@@ -2,6 +2,7 @@ import Dom from './dom';
 
 const Weather = (() => {
   const getWeather = async (location, tempUnit) => {
+    
     try {
       const key = 'ee8f07d3dc0822c9454ff3c4ba6c3f02';
       const getDetails = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${key}&units=${tempUnit}`,
@@ -19,6 +20,7 @@ const Weather = (() => {
       }
 
       return jsonData;
+
     } catch (error) {
       Dom.changeTemperatureUnit(tempUnit);
       return { error };
