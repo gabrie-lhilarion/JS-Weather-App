@@ -92,11 +92,16 @@ const Dom = (() => {
     }
   };
 
+  const switchBackground = () => {
+    const bgImages = ['clouds-0', 'clouds-1', 'clouds-2']
+  }
+
   return {
     changeTemperatureUnit,
     inputsAreValid,
     openModal,
     displayData,
+    switchBackground
   };
 })();
 

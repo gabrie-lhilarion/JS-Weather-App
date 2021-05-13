@@ -37,10 +37,11 @@ const Weather = (() => {
         getWeather(location, tempUnit).then((response) => {
           Dom.displayData(response);
           Dom.openModal();
+          Dom.switchBackground();
         });
       }
     };
-  };
+  }; 
 
   const app = () => {
     weatherData();
