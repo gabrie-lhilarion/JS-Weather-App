@@ -92,8 +92,32 @@ const Dom = (() => {
     }
   };
 
-  const switchBackground = () => {
-    const bgImages = ['clouds-0', 'clouds-1', 'clouds-2']
+  const getBackground = async() => {
+
+    const keyGen = () => {
+      let key = 0;
+      const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+      const charsLen = arr.length;
+      
+        key += arr[Math.floor(Math.random() * charsLen)];
+      
+      return key;
+    }
+
+    const index = Number(keyGen());
+
+      try {
+      const API_KEY = '21528622-e883b65787e3191b2aeaddd4d';
+      const URL = "https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent('clouds')+"&category="+encodeURIComponent('background');
+      const getImage = await fetch( URL, {mode: 'cors'});
+      const jsonDate =  await getImage.json();
+      return jsonDate.hits[index].largeImageURL;
+
+      } catch(error) {
+        console.log(error);
+        return error;
+      }
+
   }
 
   return {
@@ -101,7 +125,7 @@ const Dom = (() => {
     inputsAreValid,
     openModal,
     displayData,
-    switchBackground
+    getBackground
   };
 })();
 

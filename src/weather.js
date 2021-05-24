@@ -27,6 +27,13 @@ const Weather = (() => {
     }
   };
 
+  const  switchBackground = (response) => {
+    const body = document.querySelector('body');
+    const url = `url(${response})`;
+    Object.assign(body.style, {'background-image': url, 'background-size': 'cover'});
+    console.log(url);
+  };
+
   const weatherData = () => {
     const searchButton = document.getElementById('submit-city');
     searchButton.onclick = () => {
@@ -34,16 +41,28 @@ const Weather = (() => {
       if (Dom.inputsAreValid(element)) {
         const location = document.getElementById('city').value.trim();
         const tempUnit = document.getElementById('temp-unit').value;
+
         getWeather(location, tempUnit).then((response) => {
           Dom.displayData(response);
           Dom.openModal();
-          Dom.switchBackground();
         });
+
+        Dom.getBackground().then((response) => {
+          switchBackground(response);
+        });
+
       }
     };
   }; 
 
+  const newBackground = () => {
+    Dom.getBackground().then((response) => {
+      switchBackground(response);
+    });
+  }
+
   const app = () => {
+    newBackground();
     weatherData();
   };
 
