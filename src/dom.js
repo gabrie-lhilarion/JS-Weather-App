@@ -92,40 +92,36 @@ const Dom = (() => {
     }
   };
 
-  const getBackground = async() => {
-
+  const getBackground = async () => {
     const keyGen = () => {
       let key = 0;
       const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
       const charsLen = arr.length;
-      
-        key += arr[Math.floor(Math.random() * charsLen)];
-      
+
+      key += arr[Math.floor(Math.random() * charsLen)];
+
       return key;
-    }
+    };
 
     const index = Number(keyGen());
 
-      try {
+    try {
       const API_KEY = '21528622-e883b65787e3191b2aeaddd4d';
-      const URL = "https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent('clouds')+"&category="+encodeURIComponent('background');
-      const getImage = await fetch( URL, {mode: 'cors'});
-      const jsonDate =  await getImage.json();
+      const URL = `https://pixabay.com/api/?key=${API_KEY}&q=${encodeURIComponent('clouds')}&category=${encodeURIComponent('background')}`;
+      const getImage = await fetch(URL, { mode: 'cors' });
+      const jsonDate = await getImage.json();
       return jsonDate.hits[index].largeImageURL;
-
-      } catch(error) {
-        console.log(error);
-        return error;
-      }
-
-  }
+    } catch (error) {
+      return error;
+    }
+  };
 
   return {
     changeTemperatureUnit,
     inputsAreValid,
     openModal,
     displayData,
-    getBackground
+    getBackground,
   };
 })();
 

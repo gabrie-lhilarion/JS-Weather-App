@@ -2,7 +2,6 @@ import Dom from './dom';
 
 const Weather = (() => {
   const getWeather = async (location, tempUnit) => {
-    
     try {
       const key = 'ee8f07d3dc0822c9454ff3c4ba6c3f02';
       const getDetails = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${key}&units=${tempUnit}`,
@@ -20,18 +19,16 @@ const Weather = (() => {
       }
 
       return jsonData;
-
     } catch (error) {
       Dom.changeTemperatureUnit(tempUnit);
       return { error };
     }
   };
 
-  const  switchBackground = (response) => {
+  const switchBackground = (response) => {
     const body = document.querySelector('body');
     const url = `url(${response})`;
-    Object.assign(body.style, {'background-image': url, 'background-size': 'cover'});
-    console.log(url);
+    Object.assign(body.style, { 'background-image': url, 'background-size': 'cover' });
   };
 
   const weatherData = () => {
@@ -50,16 +47,15 @@ const Weather = (() => {
         Dom.getBackground().then((response) => {
           switchBackground(response);
         });
-
       }
     };
-  }; 
+  };
 
   const newBackground = () => {
     Dom.getBackground().then((response) => {
       switchBackground(response);
     });
-  }
+  };
 
   const app = () => {
     newBackground();
