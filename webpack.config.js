@@ -1,11 +1,20 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  mode: 'development',
+  entry: {
+    index: './src/index.js',
+    bootstrap: './src/bootstrap-module.js',
+  },
   output: {
-    filename: 'main.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+  },
+
   module: {
     rules: [
       {

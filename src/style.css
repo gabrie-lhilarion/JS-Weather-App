@@ -1,7 +1,79 @@
-#aside div {
-    background-color: bisque;
+body,
+html {
+  padding: 0;
+  margin: 0;
+  background: none;
 }
 
-#main {
-    background-color: darkgray;
+#outermost {
+  padding: 0;
+  margin: 0;
+}
+
+#outermost h3 {
+  text-align: center;
+}
+
+#centered {
+  background-color: bisque;
+  padding: 40px;
+  width: 400px;
+  margin: auto;
+  border-radius: 20px;
+}
+
+@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
+
+#modal-body {
+  background-size: cover;
+  background-image: url(bg-clouds.png);
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  animation: animatedBackground 40s linear infinite;
+}
+
+body {
+  background-size: cover;
+  background-image: url(clouds.jpeg);
+  background-position: 0 0;
+  background-repeat: repeat-x;
+}
+
+#modal-body div {
+  background: none;
+}
+
+#centered input[type='text'],
+#centered select {
+  width: 90%;
+  display: block;
+  margin: 10px auto;
+  padding: 12px 0;
+}
+
+#centered button {
+  display: block;
+  margin: 10px auto;
+}
+
+#iconDiv img {
+  width: 150px;
+}
+
+#staticBackdropbutton {
+  visibility: hidden;
+}
+
+.temp-units span {
+  background-color: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  padding: 10px;
+}
+
+.weather_info {
+  font-weight: bolder;
 }
